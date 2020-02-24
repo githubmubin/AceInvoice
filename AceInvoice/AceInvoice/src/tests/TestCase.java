@@ -1,5 +1,6 @@
 package tests;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -26,7 +27,11 @@ public class TestCase {
 			driver.get("https://qa.aceinvoice.com/sign_up");
 			
 			SignupPage ab=new SignupPage(driver);
-			String mailaddress="hoo@hio.com";
+			//generating random number 
+			Random randomgenrator=new Random();
+			int rint = randomgenrator.nextInt(1000);
+			//using that number with string
+			String mailaddress="Dummy"+rint+"@mail.com";
 			ab.enterEmail(mailaddress);
 			ab.submitclick();
 			Thread.sleep(2000);
@@ -36,8 +41,8 @@ public class TestCase {
 			Thread.sleep(2000);
 			
 			IntroductionPage ip=new IntroductionPage(driver);
-			String fname="hello";
-			String lname="hi";
+			String fname="First";
+			String lname="Last";
 			String fullname=(fname+" "+lname);
 			ip.enterfirstname(fname);
 			ip.enterlastname(lname);
