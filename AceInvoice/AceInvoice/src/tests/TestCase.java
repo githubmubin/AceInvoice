@@ -31,7 +31,7 @@ public class TestCase {
 			Random randomgenrator=new Random();
 			int rint = randomgenrator.nextInt(1000);
 			//using that number with string
-			String mailaddress="Dummy"+rint+"@mail.com";
+			String mailaddress=("DUmMy"+rint+"@mAil.com").toLowerCase();
 			ab.enterEmail(mailaddress);
 			ab.submitclick();
 			Thread.sleep(2000);
@@ -66,8 +66,8 @@ public class TestCase {
 			TeamHomePage tp=new TeamHomePage(driver);
 			String s1 = tp.verifyname();
 			String s2 = tp.verifyadd();
-			System.out.println(fullname+" "+mailaddress);
-			System.out.println(s1+" "+s2);
+			System.out.println("Expected Result : "+fullname+" "+mailaddress);
+			System.out.println("Actual Result : "+s1+" "+s2);
 			if(fullname.contentEquals(s1) && mailaddress.contentEquals(s2)) {
 				System.out.println("The Name and Mail Address is Correct");
 			}else
