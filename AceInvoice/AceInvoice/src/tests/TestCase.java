@@ -32,6 +32,7 @@ public class TestCase {
 			int rint = randomgenrator.nextInt(1000);
 			//using that number with string
 			String mailaddress=("DUmMy"+rint+"@mAil.com").toLowerCase();
+			//mail address is converted into lowercase
 			ab.enterEmail(mailaddress);
 			ab.submitclick();
 			Thread.sleep(2000);
